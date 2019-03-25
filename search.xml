@@ -12,5 +12,8 @@
     <title><![CDATA[Hello World]]></title>
     <url>%2FRushskh.github.io%2F2019%2F03%2F24%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Hello My own Blog]]></content>
+      <tags>
+        <tag>Chat</tag>
+      </tags>
   </entry>
 </search>

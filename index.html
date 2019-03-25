@@ -183,8 +183,6 @@
                             
                                 <a class="fa CSDN" href="https://blog.csdn.net/z_xindong" title="CSDN"></a>
                             
-                                <a class="fa QQ" href="/Rushskh.github.io/2631703579" title="QQ"></a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -265,8 +263,6 @@
                             
                                 <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/z_xindong" title="CSDN"></a>
                             
-                                <a class="fa QQ" target="_blank" href="/Rushskh.github.io/2631703579" title="QQ"></a>
-                            
                         </ul>
             </nav>
         </header>                
@@ -282,6 +278,15 @@
       <time datetime="2019-03-24T15:00:13.325Z" itemprop="datePublished">2019-03-24</time>
 </a>
 
+ 
+    <a href="/Rushskh.github.io/2019/03/24/新建文本文档/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2019/03/24/新建文本文档/"></span>
+        
+    </a>
 
     </div>
   
@@ -327,6 +332,15 @@
       <time datetime="2019-03-24T12:46:55.957Z" itemprop="datePublished">2019-03-24</time>
 </a>
 
+ 
+    <a href="/Rushskh.github.io/2019/03/24/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2019/03/24/hello-world/"></span>
+        
+    </a>
 
     </div>
   
@@ -423,13 +437,33 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 3;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })
     </script>
 
+
+    
+
+    
+        <script id="dsq-count-scr" src="//.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
 

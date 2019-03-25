@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Dom4J]]></title>
+    <url>%2FRushskh.github.io%2F2019%2F03%2F25%2FDom4J%2F</url>
+    <content type="text"><![CDATA[Dom4J解析XML文件一、解析XML文件（要先下载配置好相应的jar包） 1、要解析的XML文件 &lt;?xml version=”1.0” encoding=”UTF-8”?&gt; 12 电视机 北京 13 洗衣机 上海 14 冰箱 山东 2、利用dom4j来进行解析 package testxml;import java.util.Iterator;import org.dom4j.Attribute;import org.dom4j.Document;import org.dom4j.DocumentException;import org.dom4j.Element;import org.dom4j.io.SAXReader;public class ParseXML { public static void main(String[] args) throws DocumentException { SAXReader reader = new SAXReader(); Document document = reader.read(“src/testxml/Txml.xml”); Element root = document.getRootElement();//获得根元素 // System.out.println(root.getName());//打印根元素的名称 Iterator it = root.elementIterator();//获得子标签，存储在迭代器中 while(it.hasNext()) {//遍历迭代器输出字标签的相关信息 Element ele = it.next(); System.out.println(ele.getName()); Iterator att = ele.attributeIterator();//获得当前标签的属性，属性包含属性名以及属性值，存到迭代器中； while(att.hasNext()) { Attribute a = att.next(); System.out.println(a.getName()+”:”+a.getValue()); } Iterator it1 = ele.elementIterator(); while(it1.hasNext()) { Element ele1 = it1.next(); System.out.println(ele1.getName()); System.out.println(ele1.getText()); } } }}3、解析结果： goodid:1001price12name电视机place北京goodid:1002price13name洗衣机place上海goodid:1003price14name冰箱place山东Fontstyle:宋体二、创建XML文件： package testxml;import java.io.FileWriter;import java.io.IOException;import org.dom4j.Document;import org.dom4j.DocumentHelper;import org.dom4j.Element;import org.dom4j.io.XMLWriter;public class CreateXml { public static void main(String[] args) throws IOException { Document document = DocumentHelper.createDocument(); Element root = document.addElement(“root”);//创建根元素 Element author1 = root.addElement(“author”)//创建子标签 .addAttribute(“name”, “James”) .addAttribute(“location”, “UK”) .addText(“James Strachan”); Element author2 = root.addElement(“author”) .addAttribute(“name”, “Bob”) .addAttribute(“location”, “US”) .addText(“Bob McWhirter”); FileWriter fw = new FileWriter(“foo.xml”); XMLWriter xw = new XMLWriter(fw); xw.write(document); xw.close(); }}在同级目录下生成的XML文件： &lt;?xml version=”1.0” encoding=”UTF-8”?&gt; James StrachanBob McWhirter]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2FRushskh.github.io%2F2019%2F03%2F25%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Hello My own Blog]]></content>
+      <tags>
+        <tag>Chat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python爬虫基础]]></title>
     <url>%2FRushskh.github.io%2F2019%2F03%2F25%2FPython%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[Python urllib爬取网络资源一、Python中爬取相应网页数据内容的方法：import urllib.request‘’’向指定的URL地址发起请求，并返回服务器相应的数据（文件的对象）‘’’response = urllib.request.urlopen(“http://www.baidu.com&quot;)data = response.read();那么问题就来了，我们不断地请求一个网页数据，肯定会被检测到异常，所以我们需要考虑使用代理和Useragent 二、何要设置User Agent 有一些网站不喜欢被爬虫程序访问，所以会检测连接对象，如果是爬虫程序，也就是非人点击访问，它就会不让你继续访问，所以为了要让程序可以正常运行，需要隐藏自己的爬虫程序的身份。此时，我们就可以通过设置User Agent的来达到隐藏身份的目的，User Agent的中文名为用户代理，简称UA。 User Agent存放于Headers中，服务器就是通过查看Headers中的User Agent来判断是谁在访问。在Python中，如果不设置User Agent，程序将使用默认的参数，那么这个User Agent就会有Python的字样，如果服务器检查User Agent，那么没有设置User Agent的Python程序将无法正常访问网站。 Python允许我们修改这个User Agent来模拟浏览器访问，它的强大毋庸置疑。 设置User Agent： 有两种发法 第一种设置请求体： import urllib.requestimport randomurl = “http://www.baidu.com&quot; #模拟请求头headers = { “User-Agent”:”Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36”} #设置请求体req = urllib.request.Request(url,headers=headers) #发起请求response = urllib.request.urlopen(req)data = response.read().decode(“utf-8”)print(data) 第二种：想请求体里添加User Agent（随便给出我常用的几个-） import urllib.requestimport random #防止被封IPurl = “http://www.baidu.com&quot;agnetsList = [ “Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36”, “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36”, “Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.133 Safari/534.16”, “Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19”, “Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36” ]agentStr = random.choice(agnetsList)req = urllib.request.Request(url) #向请求体里面添加了User-Agentreq.add_header(“User-Agent”,agentStr)response = urllib.request.urlopen(req) 三.为何使用IP代理 User Agent已经设置好了，但是还应该考虑一个问题，程序的运行速度是很快的，如果我们利用一个爬虫程序在网站爬取东西，一个固定IP的访问频率就会很高，这不符合人为操作的标准，因为人操作不可能在几ms内，进行如此频繁的访问。所以一些网站会设置一个IP访问频率的阈值，如果一个IP访问频率超过这个阈值，说明这个不是人在访问，而是一个爬虫程序。 设置IP代理：(iplist里面的ip随时都有可能不能使用，建议还是自己去找)第一步：创建一个参数为字典的ProxyHandlerproxy_support = urllib.request.ProxyHandler({‘http’:r.choice(iplist)})第二步：创建Openeropener = urllib.request.build_opener(proxy_support)第三步：添加User Angentopener.addheaders = [(‘User-Agent’,’Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36’)]第四步：安装OPenerurllib.request.install_opener(opener)最后：使用代理ip import urllib.requestimport random as rurl = ‘http://www.whatismyip.com.tw/&#39; #这是代理IPiplist = [‘104.196.38.34:3128’,’165.155.138.149:80’,’85.237.54.35:8081’,’168.11.14.250:8009’] #创建ProxyHandlerproxy_support = urllib.request.ProxyHandler({‘http’:r.choice(iplist)}) #创建Openeropener = urllib.request.build_opener(proxy_support) #添加User Angentopener.addheaders = [(‘User-Agent’,’Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36’)] #安装OPenerurllib.request.install_opener(opener) #使用自己安装好的Openerresponse = urllib.request.urlopen(url) #读取相应信息并解码html = response.read().decode(“utf-8”) #打印信息]]></content>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2FRushskh.github.io%2F2019%2F03%2F24%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Hello My own Blog]]></content>
-      <tags>
-        <tag>Chat</tag>
       </tags>
   </entry>
 </search>

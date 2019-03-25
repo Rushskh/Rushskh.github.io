@@ -15,17 +15,18 @@
 
 
 
-<meta name="description" content="Hello My own Blog">
+<meta name="description" content="Python urllib爬取网络资源">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/2019/03/24/hello-world/index.html">
+<meta property="og:title" content="Python爬虫基础">
+<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/2019/03/25/Python爬虫基础/index.html">
 <meta property="og:site_name" content="L&#39;ZXX">
-<meta property="og:description" content="Hello My own Blog">
+<meta property="og:description" content="Python urllib爬取网络资源">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-25T12:04:31.576Z">
+<meta property="og:updated_time" content="2019-03-25T12:06:38.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Hello My own Blog">
+<meta name="twitter:title" content="Python爬虫基础">
+<meta name="twitter:description" content="Python urllib爬取网络资源">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | L&#39;ZXX</title>
+<title>Python爬虫基础 | L&#39;ZXX</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -284,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python爬虫基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/Rushskh.github.io/2019/03/24/hello-world/" class="article-date">
-      <time datetime="2019-03-24T12:46:55.957Z" itemprop="datePublished">2019-03-24</time>
+      <a href="/Rushskh.github.io/2019/03/25/Python爬虫基础/" class="article-date">
+      <time datetime="2019-03-25T12:00:17.000Z" itemprop="datePublished">2019-03-25</time>
 </a>
 
 
@@ -303,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Python爬虫基础
     </h1>
   
 
@@ -313,6 +314,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/Python/">Python</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -320,7 +325,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Hello My own Blog</p>
+        <p>Python urllib爬取网络资源<br><a id="more"></a><br>一、Python中爬取相应网页数据内容的方法：<br>import urllib.request<br>‘’’<br>向指定的URL地址发起请求，并返回服务器相应的数据（文件的对象）<br>‘’’<br>response = urllib.request.urlopen(“<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a>)<br>data = response.read();<br>那么问题就来了，我们不断地请求一个网页数据，肯定会被检测到异常，所以我们需要考虑使用代理和Useragent</p>
+<p>二、何要设置User Agent<br>    有一些网站不喜欢被爬虫程序访问，所以会检测连接对象，如果是爬虫程序，也就是非人点击访问，它就会不让你继续访问，所以为了要让程序可以正常运行，需要隐藏自己的爬虫程序的身份。此时，我们就可以通过设置User Agent的来达到隐藏身份的目的，User Agent的中文名为用户代理，简称UA。</p>
+<pre><code>User Agent存放于Headers中，服务器就是通过查看Headers中的User Agent来判断是谁在访问。在Python中，如果不设置User Agent，程序将使用默认的参数，那么这个User Agent就会有Python的字样，如果服务器检查User Agent，那么没有设置User Agent的Python程序将无法正常访问网站。
+
+Python允许我们修改这个User Agent来模拟浏览器访问，它的强大毋庸置疑。
+</code></pre><p>设置User Agent：<br>  有两种发法 第一种设置请求体：</p>
+<p>import urllib.request<br>import random<br>url = “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a></p>
+<p>#模拟请求头<br>headers = {<br>    “User-Agent”:”Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36”<br>}</p>
+<p>#设置请求体<br>req = urllib.request.Request(url,headers=headers)</p>
+<p>#发起请求<br>response = urllib.request.urlopen(req)<br>data = response.read().decode(“utf-8”)<br>print(data)</p>
+<p>第二种：想请求体里添加User Agent（随便给出我常用的几个<em>-</em>）</p>
+<p>import urllib.request<br>import random</p>
+<p>#防止被封IP<br>url = “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a><br>agnetsList = [<br>    “Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36”,<br>    “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36”,<br>    “Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.133 Safari/534.16”,<br>    “Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19”,<br>    “Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36”</p>
+<p>]<br>agentStr = random.choice(agnetsList)<br>req = urllib.request.Request(url)</p>
+<p>#向请求体里面添加了User-Agent<br>req.add_header(“User-Agent”,agentStr)<br>response = urllib.request.urlopen(req)</p>
+<p>三.为何使用IP代理<br>    User Agent已经设置好了，但是还应该考虑一个问题，程序的运行速度是很快的，如果我们利用一个爬虫程序在网站爬取东西，一个固定IP的访问频率就会很高，这不符合人为操作的标准，因为人操作不可能在几ms内，进行如此频繁的访问。所以一些网站会设置一个IP访问频率的阈值，如果一个IP访问频率超过这个阈值，说明这个不是人在访问，而是一个爬虫程序。</p>
+<p>设置IP代理：(iplist里面的ip随时都有可能不能使用，建议还是自己去找)<br>第一步：创建一个参数为字典的ProxyHandler<br>proxy_support = urllib.request.ProxyHandler({‘http’:r.choice(iplist)})<br>第二步：创建Opener<br>opener = urllib.request.build_opener(proxy_support)<br>第三步：添加User Angent<br>opener.addheaders = [(‘User-Agent’,’Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36’)]<br>第四步：安装OPener<br>urllib.request.install_opener(opener)<br>最后：使用代理ip</p>
+<p>import urllib.request<br>import random as r<br>url = ‘<a href="http://www.whatismyip.com.tw/&#39;" target="_blank" rel="noopener">http://www.whatismyip.com.tw/&#39;</a></p>
+<p>#这是代理IP<br>iplist = [‘104.196.38.34:3128’,’165.155.138.149:80’,’85.237.54.35:8081’,’168.11.14.250:8009’]</p>
+<p>#创建ProxyHandler<br>proxy_support = urllib.request.ProxyHandler({‘http’:r.choice(iplist)})</p>
+<p>#创建Opener<br>opener = urllib.request.build_opener(proxy_support)</p>
+<p>#添加User Angent<br>opener.addheaders = [(‘User-Agent’,’Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36’)]</p>
+<p>#安装OPener<br>urllib.request.install_opener(opener)</p>
+<p>#使用自己安装好的Opener<br>response = urllib.request.urlopen(url)</p>
+<p>#读取相应信息并解码<br>html = response.read().decode(“utf-8”)</p>
+<p>#打印信息</p>
+<blockquote>
+</blockquote>
 
       
     </div>
@@ -329,13 +361,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/Rushskh.github.io/2019/03/24/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/Rushskh.github.io/2019/03/25/Python爬虫基础/">Python爬虫基础</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SKH</a></p>
-        <p><span>发布时间:</span>2019-03-24, 20:46:55</p>
-        <p><span>最后更新:</span>2019-03-25, 20:04:31</p>
+        <p><span>发布时间:</span>2019-03-25, 20:00:17</p>
+        <p><span>最后更新:</span>2019-03-25, 20:06:38</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/Rushskh.github.io/2019/03/24/hello-world/" title="Hello World">http://rushskh.club/Rushskh.github.io/2019/03/24/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://rushskh.club/Rushskh.github.io/2019/03/24/hello-world/　　作者: SKH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/Rushskh.github.io/2019/03/25/Python爬虫基础/" title="Python爬虫基础">http://rushskh.club/Rushskh.github.io/2019/03/25/Python爬虫基础/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://rushskh.club/Rushskh.github.io/2019/03/25/Python爬虫基础/　　作者: SKH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,12 +379,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Rushskh.github.io/2019/03/25/Python爬虫基础/">
-                    Python爬虫基础
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/Rushskh.github.io/2019/03/24/hello-world/">
+                    Hello World
                 </a>
             </div>
-        
         
     </nav>
 
@@ -398,7 +430,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| L'ZXX　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Python爬虫基础　| L'ZXX　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -417,8 +449,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://rushskh.club/Rushskh.github.io/2019/03/24/hello-world/';
-            this.page.identifier = '2019/03/24/hello-world/';
+            this.page.url = 'http://rushskh.club/Rushskh.github.io/2019/03/25/Python爬虫基础/';
+            this.page.identifier = '2019/03/25/Python爬虫基础/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -440,15 +472,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Rushskh.github.io/2019/03/25/Python爬虫基础/" title="上一篇: Python爬虫基础">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/Rushskh.github.io/2019/03/24/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

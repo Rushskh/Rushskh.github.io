@@ -469,6 +469,25 @@ Python允许我们修改这个User Agent来模拟浏览器访问，它的强大�
     
 
 
+  
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: "stven0king",//github用户名
+  repo: "stven0king.github.io",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "33dc3864afebcb71f3af",//注册OAuth Application时生产的ClinetID
+    client_secret:"6b3af1e6693fd16c3e3e1873d311e0f50cc238ab",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+  
+
 
 
     <div class="scroll" id="post-nav-button">

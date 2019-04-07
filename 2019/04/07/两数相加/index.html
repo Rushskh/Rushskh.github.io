@@ -16,18 +16,17 @@
 <link href="/plugins/prettify/prettify.css" rel="stylesheet">
 
 
-<meta name="description" content="JSP">
-<meta name="keywords" content="Java">
+<meta name="description" content="Rush SKH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP基础">
-<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/index.html">
+<meta property="og:title" content="两数相加">
+<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/2019/04/07/两数相加/index.html">
 <meta property="og:site_name" content="L&#39;ZXX_Blog">
-<meta property="og:description" content="JSP">
+<meta property="og:description" content="Rush SKH">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T03:06:09.652Z">
+<meta property="og:updated_time" content="2019-04-07T07:40:24.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP基础">
-<meta name="twitter:description" content="JSP">
+<meta name="twitter:title" content="两数相加">
+<meta name="twitter:description" content="Rush SKH">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -59,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>JSP基础 | L&#39;ZXX_Blog</title>
+<title>两数相加 | L&#39;ZXX_Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -286,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-JSP基础" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-两数相加" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/Rushskh.github.io/2019/03/25/JSP基础/" class="article-date">
-      <time datetime="2019-03-25T13:07:17.000Z" itemprop="datePublished">2019-03-25</time>
+      <a href="/Rushskh.github.io/2019/04/07/两数相加/" class="article-date">
+      <time datetime="2019-04-07T07:40:24.000Z" itemprop="datePublished">2019-04-07</time>
 </a>
 
 
@@ -305,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JSP基础
+      两数相加
     </h1>
   
 
@@ -315,10 +314,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/Java/">Java</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -326,43 +321,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>JSP<br><a id="more"></a><br>一、JSP是什么？</p>
-<p>JSP是动态网页开发技术，也就是说网页里的数据不再是死的，与数据库会互动数据。</p>
-<p> JSP的代码是以在HTML中镶嵌java的代码，HTML生成静态内容，java生成动态内容。</p>
-<p> JSP中的HTML代码称为模版元素，java代码称为JSP脚本片段。</p>
-<p>二、JSP中的java代码</p>
-<p>1、java代码写在&lt;%  %&gt;中间：</p>
-<p>如  &lt;%  //java代码  %&gt;</p>
-<p>  2、java中的方法必须写在&lt;%!  %&gt;中间：</p>
-<p>如  &lt;%!  //java方法  %&gt;</p>
-<p>  3、java中的声明变量可以在上述两种方法里定义;</p>
-<p>如  &lt;% int a=10;%&gt; 或  &lt;%! int b=5; %&gt;</p>
-<p>  4、将一个java变量或表达式的计算结果用&lt;%=  %&gt; 输出到页面：</p>
-<p>如  &lt;%=(a-b)%&gt;注：也就是说只能是值</p>
-<pre><code>三、JSP注释
-</code></pre><p>1、HTML注释：<!-- 注释内容 --></p>
-<p>   2、JSP注释：&lt;%– 注释内容 –%&gt;</p>
-<p>注：它们有一个区别，HTML注释内容在网页中查看源代码时可以看见，而JSP注释内容看不见，且JSP注释可能会阻止java代码的执行。</p>
-<p>四、JSP异常跳转错误页面</p>
-<p>这个就是在你的JSP出现错误时（如：int a=1/0;），如何让网页跳转到你设置好的提示页面；</p>
-<p>&lt;%@  page     errorPage=”error.jsp（提示界面）”  %&gt;</p>
-<p>五、JSP内置对象（隐含对象）</p>
-<p>1、out：</p>
-<p>这个很简单用，记住把他当做java代码，即写在写java的地方，其中一个实用的方法：</p>
-<p>out.print();直接把内容打印到页面上</p>
-<p>2、request 转发和 response 重定向：</p>
-<p>这两个一起讲下，打个比方，将网页比作人：</p>
-<p>A要打电话给C，但是他不知道C的号码，只知道B的号码。</p>
-<p>第一种：A打给B，正好B与C在一起，于是B将电话给C听；</p>
-<p>第二种：A打给B，B把C的号码给了A，A再打给C；</p>
-<p>第一种只打了一次，第二种打了两次。我们把ABC看成网页；</p>
-<p>request：A用<form>表单提交到B（B可以用request.getparameter(“表单标签的name值”)，获取提交的值）</form></p>
-<p>C与B恰在一个web项目中，B直接用request.getRequestDispather(“C路径”).forward(request,response)</p>
-<p>转发到C，但地址栏还是B的地址；</p>
-<p>response：A用<form>表单提交到B，B用response.sendRedirect(“C路径”) 告诉A C的路径,A再跳转到C页面；</form></p>
-<p>附加：request.setAttribute(name,value)将value保存在request中，可在下一个网页中使用另一个方法提取，</p>
-<p>request.getAttribute(name)得到上个网页保存在request里的值；</p>
-
+        
       
     </div>
     
@@ -370,13 +329,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/Rushskh.github.io/2019/03/25/JSP基础/">JSP基础</a></p>
+        <p><span>本文标题:</span><a href="/Rushskh.github.io/2019/04/07/两数相加/">两数相加</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SKH</a></p>
-        <p><span>发布时间:</span>2019-03-25, 21:07:17</p>
-        <p><span>最后更新:</span>2019-03-26, 11:06:09</p>
+        <p><span>发布时间:</span>2019-04-07, 15:40:24</p>
+        <p><span>最后更新:</span>2019-04-07, 15:40:24</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/Rushskh.github.io/2019/03/25/JSP基础/" title="JSP基础">http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/　　作者: SKH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/Rushskh.github.io/2019/04/07/两数相加/" title="两数相加">http://rushskh.club/Rushskh.github.io/2019/04/07/两数相加/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://rushskh.club/Rushskh.github.io/2019/04/07/两数相加/　　作者: SKH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -388,16 +347,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Rushskh.github.io/2019/04/07/两数相加/">
-                    两数相加
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/Rushskh.github.io/2019/03/25/Dom4J/">
-                    Dom4J
+                <a href="/Rushskh.github.io/2019/03/25/JSP基础/">
+                    JSP基础
                 </a>
             </div>
         
@@ -445,7 +398,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"JSP基础　| L'ZXX_Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"两数相加　| L'ZXX_Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -464,8 +417,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/';
-            this.page.identifier = '2019/03/25/JSP基础/';
+            this.page.url = 'http://rushskh.club/Rushskh.github.io/2019/04/07/两数相加/';
+            this.page.identifier = '2019/04/07/两数相加/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -506,15 +459,13 @@ gitment.render('git')
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Rushskh.github.io/2019/04/07/两数相加/" title="上一篇: 两数相加">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Rushskh.github.io/2019/03/25/Dom4J/" title="下一篇: Dom4J">
+            <a href="/Rushskh.github.io/2019/03/25/JSP基础/" title="下一篇: JSP基础">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -16,18 +16,16 @@
 <link href="/plugins/prettify/prettify.css" rel="stylesheet">
 
 
-<meta name="description" content="JSP">
-<meta name="keywords" content="Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JSP基础">
-<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/index.html">
+<meta name="description" content="Rush SKH">
+<meta property="og:type" content="website">
+<meta property="og:title" content="L&#39;ZXX_Blog">
+<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/archives/2019/04/index.html">
 <meta property="og:site_name" content="L&#39;ZXX_Blog">
-<meta property="og:description" content="JSP">
+<meta property="og:description" content="Rush SKH">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T03:06:09.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP基础">
-<meta name="twitter:description" content="JSP">
+<meta name="twitter:title" content="L&#39;ZXX_Blog">
+<meta name="twitter:description" content="Rush SKH">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -59,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>JSP基础 | L&#39;ZXX_Blog</title>
+<title>Archives: 2019/4 | L&#39;ZXX_Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -69,8 +67,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -286,248 +284,52 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-JSP基础" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/Rushskh.github.io/2019/03/25/JSP基础/" class="article-date">
-      <time datetime="2019-03-25T13:07:17.000Z" itemprop="datePublished">2019-03-25</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/Rushskh.github.io/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/Rushskh.github.io/2019/04/07/两数相加/" class="archive-article-date">
+      <time datetime="2019-04-07T07:40:24.000Z" itemprop="datePublished">04-07</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JSP基础
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Rushskh.github.io/2019/04/07/两数相加/">两数相加</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/Java/">Java</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>JSP<br><a id="more"></a><br>一、JSP是什么？</p>
-<p>JSP是动态网页开发技术，也就是说网页里的数据不再是死的，与数据库会互动数据。</p>
-<p> JSP的代码是以在HTML中镶嵌java的代码，HTML生成静态内容，java生成动态内容。</p>
-<p> JSP中的HTML代码称为模版元素，java代码称为JSP脚本片段。</p>
-<p>二、JSP中的java代码</p>
-<p>1、java代码写在&lt;%  %&gt;中间：</p>
-<p>如  &lt;%  //java代码  %&gt;</p>
-<p>  2、java中的方法必须写在&lt;%!  %&gt;中间：</p>
-<p>如  &lt;%!  //java方法  %&gt;</p>
-<p>  3、java中的声明变量可以在上述两种方法里定义;</p>
-<p>如  &lt;% int a=10;%&gt; 或  &lt;%! int b=5; %&gt;</p>
-<p>  4、将一个java变量或表达式的计算结果用&lt;%=  %&gt; 输出到页面：</p>
-<p>如  &lt;%=(a-b)%&gt;注：也就是说只能是值</p>
-<pre><code>三、JSP注释
-</code></pre><p>1、HTML注释：<!-- 注释内容 --></p>
-<p>   2、JSP注释：&lt;%– 注释内容 –%&gt;</p>
-<p>注：它们有一个区别，HTML注释内容在网页中查看源代码时可以看见，而JSP注释内容看不见，且JSP注释可能会阻止java代码的执行。</p>
-<p>四、JSP异常跳转错误页面</p>
-<p>这个就是在你的JSP出现错误时（如：int a=1/0;），如何让网页跳转到你设置好的提示页面；</p>
-<p>&lt;%@  page     errorPage=”error.jsp（提示界面）”  %&gt;</p>
-<p>五、JSP内置对象（隐含对象）</p>
-<p>1、out：</p>
-<p>这个很简单用，记住把他当做java代码，即写在写java的地方，其中一个实用的方法：</p>
-<p>out.print();直接把内容打印到页面上</p>
-<p>2、request 转发和 response 重定向：</p>
-<p>这两个一起讲下，打个比方，将网页比作人：</p>
-<p>A要打电话给C，但是他不知道C的号码，只知道B的号码。</p>
-<p>第一种：A打给B，正好B与C在一起，于是B将电话给C听；</p>
-<p>第二种：A打给B，B把C的号码给了A，A再打给C；</p>
-<p>第一种只打了一次，第二种打了两次。我们把ABC看成网页；</p>
-<p>request：A用<form>表单提交到B（B可以用request.getparameter(“表单标签的name值”)，获取提交的值）</form></p>
-<p>C与B恰在一个web项目中，B直接用request.getRequestDispather(“C路径”).forward(request,response)</p>
-<p>转发到C，但地址栏还是B的地址；</p>
-<p>response：A用<form>表单提交到B，B用response.sendRedirect(“C路径”) 告诉A C的路径,A再跳转到C页面；</form></p>
-<p>附加：request.setAttribute(name,value)将value保存在request中，可在下一个网页中使用另一个方法提取，</p>
-<p>request.getAttribute(name)得到上个网页保存在request里的值；</p>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/Rushskh.github.io/2019/03/25/JSP基础/">JSP基础</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">SKH</a></p>
-        <p><span>发布时间:</span>2019-03-25, 21:07:17</p>
-        <p><span>最后更新:</span>2019-03-26, 11:06:09</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/Rushskh.github.io/2019/03/25/JSP基础/" title="JSP基础">http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/　　作者: SKH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Rushskh.github.io/2019/04/07/两数相加/">
-                    两数相加
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/Rushskh.github.io/2019/03/25/Dom4J/">
-                    Dom4J
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+          
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"JSP基础　| L'ZXX_Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
-
-    
-        <section id="comments">
-    <style> aside.comment-bar { margin: auto 30px; }</style>
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function(){
-            this.page.url = 'http://rushskh.club/Rushskh.github.io/2019/03/25/JSP基础/';
-            this.page.identifier = '2019/03/25/JSP基础/';
-        };
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = '//.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-    
-    <script> loadComment(); </script>
-
-</section>
-
-
-    
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
-  <!-- Gitment评论插件通用代码 -->
-<div id="git"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  owner: "stven0king",//github用户名
-  repo: "stven0king.github.io",//用户存储评论的github项目名称
-  oauth: {
-    client_id: "33dc3864afebcb71f3af",//注册OAuth Application时生产的ClinetID
-    client_secret:"6b3af1e6693fd16c3e3e1873d311e0f50cc238ab",//注册OAuth Application时生成的Client Secret
-  },
-})
-gitment.render('git')
-</script>
-<!-- Gitment代码结束 -->
+  
+    </div></section>
   
 
+    
 
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/Rushskh.github.io/2019/04/07/两数相加/" title="上一篇: 两数相加">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/Rushskh.github.io/2019/03/25/Dom4J/" title="下一篇: Dom4J">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Rushskh.github.io/2019/04/07/两数相加/">两数相加</a></li><li class="post-list-item"><a class="post-list-link" href="/Rushskh.github.io/2019/03/25/JSP基础/">JSP基础</a></li><li class="post-list-item"><a class="post-list-link" href="/Rushskh.github.io/2019/03/25/Dom4J/">Dom4J</a></li><li class="post-list-item"><a class="post-list-link" href="/Rushskh.github.io/2019/03/25/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/Rushskh.github.io/2019/03/25/Python爬虫基础/">Python爬虫基础</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">

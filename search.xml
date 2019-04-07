@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[两数相加]]></title>
+    <url>%2FRushskh.github.io%2F2019%2F04%2F07%2F%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[JSP基础]]></title>
     <url>%2FRushskh.github.io%2F2019%2F03%2F25%2FJSP%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[JSP一、JSP是什么？ JSP是动态网页开发技术，也就是说网页里的数据不再是死的，与数据库会互动数据。 JSP的代码是以在HTML中镶嵌java的代码，HTML生成静态内容，java生成动态内容。 JSP中的HTML代码称为模版元素，java代码称为JSP脚本片段。 二、JSP中的java代码 1、java代码写在&lt;% %&gt;中间： 如 &lt;% //java代码 %&gt; 2、java中的方法必须写在&lt;%! %&gt;中间： 如 &lt;%! //java方法 %&gt; 3、java中的声明变量可以在上述两种方法里定义; 如 &lt;% int a=10;%&gt; 或 &lt;%! int b=5; %&gt; 4、将一个java变量或表达式的计算结果用&lt;%= %&gt; 输出到页面： 如 &lt;%=(a-b)%&gt;注：也就是说只能是值 三、JSP注释 1、HTML注释： 2、JSP注释：&lt;%– 注释内容 –%&gt; 注：它们有一个区别，HTML注释内容在网页中查看源代码时可以看见，而JSP注释内容看不见，且JSP注释可能会阻止java代码的执行。 四、JSP异常跳转错误页面 这个就是在你的JSP出现错误时（如：int a=1/0;），如何让网页跳转到你设置好的提示页面； &lt;%@ page errorPage=”error.jsp（提示界面）” %&gt; 五、JSP内置对象（隐含对象） 1、out： 这个很简单用，记住把他当做java代码，即写在写java的地方，其中一个实用的方法： out.print();直接把内容打印到页面上 2、request 转发和 response 重定向： 这两个一起讲下，打个比方，将网页比作人： A要打电话给C，但是他不知道C的号码，只知道B的号码。 第一种：A打给B，正好B与C在一起，于是B将电话给C听； 第二种：A打给B，B把C的号码给了A，A再打给C； 第一种只打了一次，第二种打了两次。我们把ABC看成网页； request：A用表单提交到B（B可以用request.getparameter(“表单标签的name值”)，获取提交的值） C与B恰在一个web项目中，B直接用request.getRequestDispather(“C路径”).forward(request,response) 转发到C，但地址栏还是B的地址； response：A用表单提交到B，B用response.sendRedirect(“C路径”) 告诉A C的路径,A再跳转到C页面； 附加：request.setAttribute(name,value)将value保存在request中，可在下一个网页中使用另一个方法提取， request.getAttribute(name)得到上个网页保存在request里的值；]]></content>

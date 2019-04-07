@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[两数相加]]></title>
     <url>%2FRushskh.github.io%2F2019%2F04%2F07%2F%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[LeetCode给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。 示例： 输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)输出：7 -&gt; 0 -&gt; 8原因：342 + 465 = 807/** Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }*/class Solution { public ListNode addTwoNumbers(ListNode l1, ListNode l2) { }}tips: 一开始我的思路是直接算出两个数的和，然后拆项，一位一位的存入ListNode中，但我忽略了一个问题就是int可表示的最大值，在给的模板中，val变量是int类型的，不能表示很大的数，而测试样例中可就不一定了，好像第780多就爆Int了，那没办法了只能一位一位的加和，然后再判断是否要进位来解这道题了………….. /** Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }*/class Solution { public ListNode addTwoNumbers(ListNode l1, ListNode l2) { ListNode p = l1; ListNode q = l2; ListNode re = new ListNode(0); ListNode r = re; int c = 0;//用来判断需不需要进位 while(p!=null||q!=null){ int x = (p!=null)?p.val:0; int y = (q!=null)?q.val:0; int sum = c+x+y; c = sum/10; r.next = new ListNode(sum%10); r = r.next; if(p!=null) p = p.next; if(q!=null) q = q.next; } if(c&gt;0){ r.next = new ListNode(c); } return re.next; }}]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[JSP基础]]></title>

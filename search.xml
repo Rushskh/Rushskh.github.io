@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[整数反转]]></title>
+    <url>%2FRushskh.github.io%2F2019%2F04%2F08%2F%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC%2F</url>
+    <content type="text"><![CDATA[将一个32位的整数反转并判断是否超出int的取值范围给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。示例 1:输入: 123输出: 321示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。tips:一开始我的思路是通过取余反转得到反转之后数值并来和Integer.Max_VALUE来进行判断看是否包int，但是如果一个数超出了int的范围他就会转换为负的，也就是说你不会判断出是否爆int，比如说Integer.MAX_VALUE的值是2147483647，这时如果你加了个1，那么这个数就会变为-2147483648。因此我们可以这样来做：在进行下一次进位时先和Integer.MAX_VALUe/10来警醒比较就可以了，下面是代码：class Solution { public int reverse(int x) { int re = 0; while(x!=0){ int n = x%10; x/=10; //判断正数 if(re&gt;Integer.MAX_VALUE/10||re==Integer.MAX_VALUE/10&amp;&amp;n&gt;7) return 0; //判断负数 if(re&lt;Integer.MIN_VALUE/10||re==Integer.MIN_VALUE&amp;&amp;n&lt;-8) return 0; re = re*10+n; } return re; } }]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[两数相加]]></title>
     <url>%2FRushskh.github.io%2F2019%2F04%2F07%2F%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0%2F</url>
     <content type="text"><![CDATA[LeetCode给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。 示例： 输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)输出：7 -&gt; 0 -&gt; 8原因：342 + 465 = 807/** Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }*/class Solution { public ListNode addTwoNumbers(ListNode l1, ListNode l2) { }}tips: 一开始我的思路是直接算出两个数的和，然后拆项，一位一位的存入ListNode中，但我忽略了一个问题就是int可表示的最大值，在给的模板中，val变量是int类型的，不能表示很大的数，而测试样例中可就不一定了，好像第780多就爆Int了，那没办法了只能一位一位的加和，然后再判断是否要进位来解这道题了………….. /** Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode(int x) { val = x; } }*/class Solution { public ListNode addTwoNumbers(ListNode l1, ListNode l2) { ListNode p = l1; ListNode q = l2; ListNode re = new ListNode(0); ListNode r = re; int c = 0;//用来判断需不需要进位 while(p!=null||q!=null){ int x = (p!=null)?p.val:0; int y = (q!=null)?q.val:0; int sum = c+x+y; c = sum/10; r.next = new ListNode(sum%10); r = r.next; if(p!=null) p = p.next; if(q!=null) q = q.next; } if(c&gt;0){ r.next = new ListNode(c); } return re.next; }}]]></content>

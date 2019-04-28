@@ -19,7 +19,7 @@
 <meta name="description" content="Rush SKH">
 <meta property="og:type" content="website">
 <meta property="og:title" content="L&#39;ZXX_Blog">
-<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/tags/LeetCode/index.html">
+<meta property="og:url" content="http://rushskh.club/Rushskh.github.io/tags/Leetcode/index.html">
 <meta property="og:site_name" content="L&#39;ZXX_Blog">
 <meta property="og:description" content="Rush SKH">
 <meta property="og:locale" content="zh-Hans">
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: LeetCode | L&#39;ZXX_Blog</title>
+<title>Tag: Leetcode | L&#39;ZXX_Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -301,8 +301,8 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/Rushskh.github.io/2019/04/08/整数反转/" class="archive-article-date">
-      <time datetime="2019-04-08T06:02:38.000Z" itemprop="datePublished">04-08</time>
+              <a href="/Rushskh.github.io/2019/04/09/integet/" class="archive-article-date">
+      <time datetime="2019-04-09T14:52:07.000Z" itemprop="datePublished">04-09</time>
 </a>
 
 
@@ -310,7 +310,7 @@
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/Rushskh.github.io/2019/04/08/整数反转/">整数反转</a>
+      <a class="archive-article-title" href="/Rushskh.github.io/2019/04/09/integet/">字符串转整数</a>
     </h1>
   
 
@@ -319,40 +319,7 @@
 
           
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/LeetCode/">LeetCode</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/Rushskh.github.io/2019/04/07/两数相加/" class="archive-article-date">
-      <time datetime="2019-04-07T07:40:24.000Z" itemprop="datePublished">04-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Rushskh.github.io/2019/04/07/两数相加/">两数相加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/LeetCode/">LeetCode</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Rushskh.github.io/tags/Leetcode/">Leetcode</a></li></ul>
     </div>
 
         </div>
@@ -452,6 +419,38 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              articleNav: "#article-nav a, #post-nav-button a", 
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>a.post-list-link", 
             
              friends: "#js-friends a", 
              socail: ".social a" 
